@@ -19,6 +19,7 @@ def scrape():
     title= soup.find_all('div', class_='content_title')[0].text
     par=soup.find_all('div', class_='article_teaser_body')[0].text
 
+
     # get JPL Mars Space Images - Featured Image
     url = 'https://spaceimages-mars.com/'
     browser.visit(url)   
@@ -29,6 +30,7 @@ def scrape():
 
     image = soup.find_all('img', class_='fancybox-image')[0]["src"]
     featured_image_url = url + image
+
 
     url = 'https://galaxyfacts-mars.com/#'
     tables = pd.read_html(url)
@@ -41,8 +43,8 @@ def scrape():
     url = 'https://marshemispheres.com/'
     browser.visit(url)
 
-# get hemisphere names and images urls
 
+    # get hemisphere names and images urls
     hemisphere_image_urls = []
 
     for hem_num in range (4):
@@ -50,7 +52,6 @@ def scrape():
         name_hem = partial_hem[hem_num].text
         partial_hem[hem_num].click()
     
-        
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
         
@@ -60,9 +61,6 @@ def scrape():
         hem_dic = {"title": name_hem, "img_url": img_hem}
         hemisphere_image_urls.append(hem_dic)  
         browser.back()
-
-    hemisphere_image_urls
-
 
     Mars_info = {
         'news_title': title, 
@@ -76,3 +74,6 @@ def scrape():
     browser.quit()
 
     return Mars_info
+
+
+
