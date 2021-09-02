@@ -37,7 +37,7 @@ def scrape():
     df = tables[0]
     df.columns = ['Description', 'Mars', 'Earth']
 
-    html_table = df.to_html()
+    html_table = df.to_html(index=False)
     html_table = html_table.replace('\n', '')
 
     url = 'https://marshemispheres.com/'
