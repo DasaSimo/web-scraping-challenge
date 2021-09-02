@@ -8,7 +8,7 @@ import time
 def scrape():
     # browser = init_browser()
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
 
     # get NASA Mars News
     url = 'https://redplanetscience.com/'
