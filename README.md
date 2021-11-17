@@ -45,3 +45,6 @@ Using MongoDB with Flask templating we created a new HTML page that displays all
 * A root route `/` was created and used for querying the Mongo database and pass the mars data into an HTML template to display the data.
 
 * HTML file called `index.html` was used to take the mars data dictionary and display all of the data in the appropriate HTML elements.
+
+![image](https://user-images.githubusercontent.com/84484371/142092659-95d35108-4449-4e5f-91ee-801de5d035dd.png)
+
